@@ -47,7 +47,7 @@ export default {
           time: new Date().toLocaleTimeString(),
         },
       ],
-      // newMessage: ''
+      
     };
   },
   methods: {
@@ -93,7 +93,7 @@ export default {
     },
     likeMessage(id) {
       const message = this.messages.find((message) => message.id === id);
-      message.likes = message.likes ? message.likes + 1 : 1;
+      //
     },
   },
 };
