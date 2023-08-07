@@ -60,6 +60,7 @@ export default {
           date: new Date().toDateString(),
           time: new Date().toLocaleTimeString(),
         };
+        // message.classList.add('add-animation');
         this.messages.push(message);
         this.newMessage = '';
 
@@ -90,6 +91,7 @@ export default {
     },
     deleteMessage(id) {
       this.messages = this.messages.filter((message) => message.id !== id);
+      
     },
     likeMessage(id) {
       const message = this.messages.find((message) => message.id === id);
@@ -127,6 +129,7 @@ export default {
     flex-wrap: wrap;
     height: auto;
     max-width: fit-content;
+    animation: addAnimation 2s ease-in-out;
     .message-text{
       margin-left: 1rem;
       padding: .5rem;
@@ -135,9 +138,13 @@ export default {
       font-weight: 300;
       padding-right: .7rem
     }
-    
-
   }
+
+  @keyframes addAnimation {
+   0% { opacity: 0; transform: translateY(50px); }
+   100% { opacity: 1; transform: translateY(0px); }
+}
+  
   .message.me{
     margin-left: auto;
   }
@@ -150,9 +157,6 @@ export default {
       }
     }
   }
-  
-
-
   .stranger{
     background-color: rgb(181, 232, 180);
     .message-info{
@@ -222,7 +226,6 @@ export default {
     
 
   }
-
 
 
 .input-container button{
